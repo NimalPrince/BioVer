@@ -1,0 +1,183 @@
+{% load static %}
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/-->
+<!DOCTYPE html>
+<html>
+<head>
+<title> Vein Authentication</title>
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!--web-fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--js-->
+<script src="/static/js/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="/static/js/move-top.js"></script>
+<script type="text/javascript" src="/static/js/easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+<!-- //end-smoth-scrolling -->
+</head>
+<body>
+<!--header start here-->
+<div class="mother-grid">
+	<div class="container">
+		<div class="header">
+			<div class="header-left">
+				  <a href="/static/index.html"> <img src="/static/images/logo.png"> </a>
+			</div>
+			<span class="menu"> <img src="/static/images/icon-1.png"></span>
+			<div class="clear"> </div>
+			<div class="header-right">
+				  <ul class="res"> 
+					<li><a href="/adminhome">Home</a></li>
+					<li><a href="/addfinger">Add Staff Details</a></li>
+					 <li><a href="/logout">Logout</a></li>			
+				  </ul>
+				   <script>
+			                                                      $( "span.menu").click(function() {
+			                                                                                        $(  "ul.res" ).slideToggle("slow", function() {
+			                                                                                         // Animation complete.
+			                                                                                         });
+			                                                                                         });
+		                                                     </script>
+			</div>
+	<div class="clearfix"> </div>
+		</div>
+	</div><br />
+	<img src="/static/images/001.jpg" class="img img-responsive" style="width:100%;" />
+</div>
+<!--header end here-->
+<!--about start here-->
+<div class="about">
+	
+	<div class="container">
+		
+		<div class="about-main">
+			<h3>ADD STAFF_VEIN HERE</h3>
+			<div class="col-md-6 about-left">
+				<form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+				<table class="table table-bordered table-responsive">
+					<tr>
+                    <td>
+							Staff Name
+							<input type="text" name="nme" class="form-control" required />
+							Staff ID
+                            <input type="text" name="cid" class="form-control" required />
+							Password
+                            <input type="password" name="pas" class="form-control" required />
+							Address
+                            <textarea name="crm" class="form-control" required></textarea>
+							Staff Photo
+                            <input type="file" name="pic" class="form-control" required />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div style="background-color: green; color:white; padding:3px; margin-bottom: 3px;;"><center><b>ADD VEIN DETAILS</b></center></div>
+								
+							<table>
+								<tr>
+									<td>Vein Pic 1
+										<input type="file" name="f1" class="form-control" required /></td>
+									<td>Vein Pic 2
+										<input type="file" name="f2" class="form-control" required /></td>
+								</tr>
+								<tr>
+									<td>Vein Pic 3
+										<input type="file" name="f3" class="form-control" required /></td>
+									<td>Vein Pic 4
+										<input type="file" name="f4" class="form-control" required /></td>
+								</tr>
+								<tr>
+									<td>Vein Pic 5
+										<input type="file" name="f5" class="form-control" required /></td>
+									<td>Vein Pic 6
+										<input type="file" name="f6" class="form-control" required /></td>
+								</tr>
+								<tr>
+									<td>Vein Pic 7
+										<input type="file" name="f7" class="form-control" required /></td>
+									<td>Vein Pic 8
+										<input type="file" name="f8" class="form-control" required /></td>
+								</tr>
+								<tr>
+									<td>Vein Pic 9
+										<input type="file" name="f9" class="form-control" required /></td>
+									<td>Vein Pic 10
+										<input type="file" name="f10" class="form-control" required /></td>
+								</tr>
+							</table>
+							
+							<br />
+                    <center>
+                            <input type="submit" name="sub" value="ADD STAFF DATA" class="btn btn-sm btn-success" /></center>
+						</td>
+                    </tr>
+                </table>
+            </form>
+            </div>
+			<div class="col-md-6 about-right">
+                {%if data%}
+				
+				{%for temp in data%}
+				<div class="col-md-4">
+					<a href="/crdata?cid={{temp.2}}" style="text-decoration: none;">
+					<img src="/static/staff/{{temp.4}}" style="height: 180px;" />
+					<center><b><font color="blue">{{temp.1}}</font></b></center>
+				</a>
+				</div>					
+					{%endfor%}		
+																																																						 
+					{%endif%}	
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--about end here-->
+<!--about banner start here-->
+
+<!--about banner end here-->
+<!--footer start here-->
+
+<!--/footer end here-->
+<!--copyrights start here-->
+<div class="copyright">
+	<div class="container">
+		<div class="copy-right-main">
+			<div class="col-md-6 copy-left">
+				<p>2022 &copy Project by <a href="/static/#">  MySelf</p>
+			</div>
+			 <script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+					<a href="/static/#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+{% load static %}
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/-->
+<!DOCTYPE html>
+<html>
+<head>
+<title> Vein Authentication</title>
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!--web-fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--js-->
+<script src="/static/js/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="/static/js/move-top.js"></script>
+<script type="text/javascript" src="/static/js/easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+<!-- //end-smoth-scrolling -->
+</head>
+<body>
+<!--header start here-->
+<div class="mother-grid">
+	<div class="container">
+		<div class="header">
+			<div class="header-left">
+				  <a href="/static/index.html"> <img src="/static/images/logo.png"> </a>
+			</div>
+			<span class="menu"> <img src="/static/images/icon-1.png"></span>
+			<div class="clear"> </div>
+			<div class="header-right">
+				  <ul class="res"> 
+                    <li><a href="/">Home</a></li>
+					<li><a href="/scan">Staff Login</a></li>
+				  	<li><a href="/login">Department Login</a></li>			
+				  </ul>
+				   <script>
+			                                                      $( "span.menu").click(function() {
+			                                                                                        $(  "ul.res" ).slideToggle("slow", function() {
+			                                                                                         // Animation complete.
+			                                                                                         });
+			                                                                                         });
+		                                                     </script>
+			</div>
+			
+	<div class="clearfix"> </div>
+		</div>
+	</div>
+	<img src="/static/images/scan1.jpg" class="img img-responsive" style="width:100%;" />
+</div>
+<!--header end here-->
+<!--about start here-->
+<div class="about">
+	<div class="container">
+		<div class="about-main">
+			<h3>STAFF LOGIN</h3>	
+			<div class="col-md-3 about-right"></div>		
+			<div class="col-md-6 about-right">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+				<table class="table table-bordered table-responsive">
+                                        <tr>                                            
+                        <td>                      
+							User ID
+                            <input type="text" name="u" class="form-control" required />      
+                           Password
+                            <input type="password" name="pas" class="form-control" required />
+                    <center>
+                            <input type="submit" name="sub" value="LogIn" class="btn btn-sm btn-success" /><br />
+						{%if x%}
+							{%if x == 1%}
+								Invalid UserID or Password
+							{%endif%}
+						{%endif%}
+						</center></td>
+                    </tr>
+                </table>
+            </form>
+			</div>
+			<div class="col-md-3 about-right"></div>
+			<div class="col-md-12">
+				
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--about end here-->
+<!--about banner start here-->
+
+<!--about banner end here-->
+<!--footer start here-->
+
+<!--/footer end here-->
+<!--copyrights start here-->
+<div class="copyright">
+	<div class="container">
+		<div class="copy-right-main">
+			<div class="col-md-6 copy-left">
+				<p>2022 &copy Project by <a href="/static/#">  MySelf</p>
+			</div>
+			 <script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+					<a href="/static/#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
